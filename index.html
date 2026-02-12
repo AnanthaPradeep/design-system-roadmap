@@ -1,162 +1,342 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Design System Roadmap</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design System Roadmap</title>
 
-<h1>Design System Roadmap</h1>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-<div class="buttons">
-  <button onclick="saveAsPDF()">Save as PDF</button>
-  <button onclick="resetProgress()">Reset Progress</button>
-</div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="roadmap-container">
+      <h1>Design System Roadmap</h1>
 
-<div class="progress-box">
-  Progress: <span id="progress">0</span>% Complete
-  <div class="progress-bar">
-  <div id="progressFill"></div>
-</div>
-</div>
+      <div class="buttons">
+        <button onclick="saveAsPDF()">Save as PDF</button>
+        <button onclick="saveAsImage()">Save as Image</button>
+        <button onclick="resetProgress()">Reset Progress</button>
+        <button id="theme-toggle">Toggle Theme</button>
+      </div>
 
+      <div class="progress-box">
+        Progress: <span id="progress">0</span>% Complete
+        <div class="progress-bar">
+          <div id="progressFill"></div>
+        </div>
+      </div>
 
-<ul>
-  <li><input type="checkbox" class="task main-task">PHASE 1 — Basics
-    <ul>
-      <li><input type="checkbox" class="task sub-task">What is a Design System?</li>
-      <li><input type="checkbox" class="task sub-task">Need of a Design System</li>
-      <li><input type="checkbox" class="task sub-task">Stakeholders involved</li>
-      <li><input type="checkbox" class="task sub-task">Design System vs Component Library</li>
-      <li><input type="checkbox" class="task sub-task">Terminology and examples</li>
-    </ul>
-  </li>
+      <ul>
+        <li>
+          <input type="checkbox" class="task main-task" />PHASE 1 — Basics
+          <ul>
+            <li>
+              <input type="checkbox" class="task sub-task" />What is a Design
+              System?
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Need of a Design
+              System
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Stakeholders
+              involved
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Design System vs
+              Component Library
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Terminology and
+              examples
+            </li>
+          </ul>
+        </li>
 
-  <li><input type="checkbox" class="task main-task">PHASE 2 — Planning
-    <ul>
-      <li><input type="checkbox" class="task sub-task">Vision & goals</li>
-      <li><input type="checkbox" class="task sub-task">Governance</li>
-      <li><input type="checkbox" class="task sub-task">Guidelines & principles</li>
-      <li><input type="checkbox" class="task sub-task">Documentation strategy</li>
-      <li><input type="checkbox" class="task sub-task">Contribution guidelines</li>
-      <li><input type="checkbox" class="task sub-task">Release strategy</li>
-    </ul>
-  </li>
+        <li>
+          <input type="checkbox" class="task main-task" />PHASE 2 — Planning
+          <ul>
+            <li>
+              <input type="checkbox" class="task sub-task" />Vision & goals
+            </li>
+            <li><input type="checkbox" class="task sub-task" />Governance</li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Guidelines &
+              principles
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Documentation
+              strategy
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Contribution
+              guidelines
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Release strategy
+            </li>
+          </ul>
+        </li>
 
-  <li><input type="checkbox" class="task main-task">PHASE 3 — Design Tokens & Language
-    <ul>
-      <li><input type="checkbox" class="task sub-task">Create Design Language</li>
-      <li><input type="checkbox" class="task sub-task">Brand definition (logo, color, voice)</li>
-      <li><input type="checkbox" class="task sub-task">Color systems (semantic & functional)</li>
-      <li><input type="checkbox" class="task sub-task">Typography scale</li>
-      <li><input type="checkbox" class="task sub-task">Spacing tokens</li>
-      <li><input type="checkbox" class="task sub-task">Layout tokens (grid, breakpoints)</li>
-      <li><input type="checkbox" class="task sub-task">Iconography tokens</li>
-    </ul>
-  </li>
+        <li>
+          <input type="checkbox" class="task main-task" />PHASE 3 — Design
+          Tokens & Language
+          <ul>
+            <li>
+              <input type="checkbox" class="task sub-task" />Create Design
+              Language
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Brand definition
+              (logo, color, voice)
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Color systems
+              (semantic & functional)
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Typography scale
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Spacing tokens
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Layout tokens
+              (grid, breakpoints)
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Iconography tokens
+            </li>
+          </ul>
+        </li>
 
-  <li><input type="checkbox" class="task main-task">PHASE 4 — Visual & Style Foundations
-    <ul>
-      <li><input type="checkbox" class="task sub-task">Functional colors</li>
-      <li><input type="checkbox" class="task sub-task">Units & spacing</li>
-      <li><input type="checkbox" class="task sub-task">Grid & responsiveness</li>
-      <li><input type="checkbox" class="task sub-task">Breakpoints</li>
-      <li><input type="checkbox" class="task sub-task">Readability & performance</li>
-      <li><input type="checkbox" class="task sub-task">Accessibility tokens</li>
-    </ul>
-  </li>
+        <li>
+          <input type="checkbox" class="task main-task" />PHASE 4 — Visual &
+          Style Foundations
+          <ul>
+            <li>
+              <input type="checkbox" class="task sub-task" />Functional colors
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Units & spacing
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Grid &
+              responsiveness
+            </li>
+            <li><input type="checkbox" class="task sub-task" />Breakpoints</li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Readability &
+              performance
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Accessibility
+              tokens
+            </li>
+          </ul>
+        </li>
 
-  <li><input type="checkbox" class="task main-task">PHASE 5 — Core UI Components
-    <ul>
-      <li><input type="checkbox" class="task sub-task">Avatar</li>
-      <li><input type="checkbox" class="task sub-task">Badges</li>
-      <li><input type="checkbox" class="task sub-task">Buttons</li>
-      <li><input type="checkbox" class="task sub-task">Cards</li>
-      <li><input type="checkbox" class="task sub-task">Dropdowns</li>
-      <li><input type="checkbox" class="task sub-task">Forms
-        <ul>
-          <li><input type="checkbox" class="task sub-task">Input</li>
-          <li><input type="checkbox" class="task sub-task">Checkbox</li>
-          <li><input type="checkbox" class="task sub-task">Radio</li>
-          <li><input type="checkbox" class="task sub-task">Select</li>
-          <li><input type="checkbox" class="task sub-task">Textarea</li>
-        </ul>
-      </li>
-      <li><input type="checkbox" class="task sub-task">Loading indicators</li>
-      <li><input type="checkbox" class="task sub-task">Modals</li>
-      <li><input type="checkbox" class="task sub-task">Tabs</li>
-      <li><input type="checkbox" class="task sub-task">Toast / Alerts</li>
-      <li><input type="checkbox" class="task sub-task">Tooltips</li>
-    </ul>
-  </li>
+        <li>
+          <input type="checkbox" class="task main-task" />PHASE 5 — Core UI
+          Components
+          <ul>
+            <li><input type="checkbox" class="task sub-task" />Avatar</li>
+            <li><input type="checkbox" class="task sub-task" />Badges</li>
+            <li><input type="checkbox" class="task sub-task" />Buttons</li>
+            <li><input type="checkbox" class="task sub-task" />Cards</li>
+            <li><input type="checkbox" class="task sub-task" />Dropdowns</li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Forms
+              <ul>
+                <li><input type="checkbox" class="task sub-task" />Input</li>
+                <li><input type="checkbox" class="task sub-task" />Checkbox</li>
+                <li><input type="checkbox" class="task sub-task" />Radio</li>
+                <li><input type="checkbox" class="task sub-task" />Select</li>
+                <li><input type="checkbox" class="task sub-task" />Textarea</li>
+              </ul>
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Loading indicators
+            </li>
+            <li><input type="checkbox" class="task sub-task" />Modals</li>
+            <li><input type="checkbox" class="task sub-task" />Tabs</li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Toast / Alerts
+            </li>
+            <li><input type="checkbox" class="task sub-task" />Tooltips</li>
+          </ul>
+        </li>
 
-  <li><input type="checkbox" class="task main-task">PHASE 6 — Component Guidelines
-    <ul>
-      <li><input type="checkbox" class="task sub-task">States (hover/focus/disabled)</li>
-      <li><input type="checkbox" class="task sub-task">Responsiveness</li>
-      <li><input type="checkbox" class="task sub-task">Variants (size, color, usage)</li>
-      <li><input type="checkbox" class="task sub-task">Composition rules</li>
-      <li><input type="checkbox" class="task sub-task">Accessibility role specs</li>
-      <li><input type="checkbox" class="task sub-task">Semantic naming</li>
-    </ul>
-  </li>
+        <li>
+          <input type="checkbox" class="task main-task" />PHASE 6 — Component
+          Guidelines
+          <ul>
+            <li>
+              <input type="checkbox" class="task sub-task" />States
+              (hover/focus/disabled)
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Responsiveness
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Variants (size,
+              color, usage)
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Composition rules
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Accessibility role
+              specs
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Semantic naming
+            </li>
+          </ul>
+        </li>
 
-  <li><input type="checkbox" class="task main-task">PHASE 7 — Tokens & Theming
-    <ul>
-      <li><input type="checkbox" class="task sub-task">Define tokens (color, spacing, typography)</li>
-      <li><input type="checkbox" class="task sub-task">Light and dark mode</li>
-      <li><input type="checkbox" class="task sub-task">Theme variables</li>
-      <li><input type="checkbox" class="task sub-task">Theming strategy</li>
-      <li><input type="checkbox" class="task sub-task">Runtime theme switching</li>
-    </ul>
-  </li>
+        <li>
+          <input type="checkbox" class="task main-task" />PHASE 7 — Tokens &
+          Theming
+          <ul>
+            <li>
+              <input type="checkbox" class="task sub-task" />Define tokens
+              (color, spacing, typography)
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Light and dark mode
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Theme variables
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Theming strategy
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Runtime theme
+              switching
+            </li>
+          </ul>
+        </li>
 
-  <li><input type="checkbox" class="task main-task">PHASE 8 — Tooling & Development
-    <ul>
-      <li><input type="checkbox" class="task sub-task">Component catalog generation</li>
-      <li><input type="checkbox" class="task sub-task">Storybook integration</li>
-      <li><input type="checkbox" class="task sub-task">Version control & branching</li>
-      <li><input type="checkbox" class="task sub-task">Unit testing</li>
-      <li><input type="checkbox" class="task sub-task">Accessibility testing</li>
-      <li><input type="checkbox" class="task sub-task">Code style & linting</li>
-      <li><input type="checkbox" class="task sub-task">Semantic versioning</li>
-    </ul>
-  </li>
+        <li>
+          <input type="checkbox" class="task main-task" />PHASE 8 — Tooling &
+          Development
+          <ul>
+            <li>
+              <input type="checkbox" class="task sub-task" />Component catalog
+              generation
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Storybook
+              integration
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Version control &
+              branching
+            </li>
+            <li><input type="checkbox" class="task sub-task" />Unit testing</li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Accessibility
+              testing
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Code style &
+              linting
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Semantic versioning
+            </li>
+          </ul>
+        </li>
 
-  <li><input type="checkbox" class="task main-task">PHASE 9 — Releases & Deployment
-    <ul>
-      <li><input type="checkbox" class="task sub-task">Build tooling (Rollup/Vite)</li>
-      <li><input type="checkbox" class="task sub-task">NPM publishing strategy</li>
-      <li><input type="checkbox" class="task sub-task">Changelog conventions</li>
-      <li><input type="checkbox" class="task sub-task">CI/CD setup</li>
-      <li><input type="checkbox" class="task sub-task">Release automation</li>
-    </ul>
-  </li>
+        <li>
+          <input type="checkbox" class="task main-task" />PHASE 9 — Releases &
+          Deployment
+          <ul>
+            <li>
+              <input type="checkbox" class="task sub-task" />Build tooling
+              (Rollup/Vite)
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />NPM publishing
+              strategy
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Changelog
+              conventions
+            </li>
+            <li><input type="checkbox" class="task sub-task" />CI/CD setup</li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Release automation
+            </li>
+          </ul>
+        </li>
 
-  <li><input type="checkbox" class="task main-task">PHASE 10 — Accessibility Essentials
-    <ul>
-      <li><input type="checkbox" class="task sub-task">ARIA compliance</li>
-      <li><input type="checkbox" class="task sub-task">Keyboard navigation</li>
-      <li><input type="checkbox" class="task sub-task">Screen-reader support</li>
-      <li><input type="checkbox" class="task sub-task">Focus management</li>
-      <li><input type="checkbox" class="task sub-task">Contrast guidelines</li>
-      <li><input type="checkbox" class="task sub-task">Accessible form controls</li>
-    </ul>
-  </li>
+        <li>
+          <input type="checkbox" class="task main-task" />PHASE 10 —
+          Accessibility Essentials
+          <ul>
+            <li>
+              <input type="checkbox" class="task sub-task" />ARIA compliance
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Keyboard navigation
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Screen-reader
+              support
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Focus management
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Contrast guidelines
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Accessible form
+              controls
+            </li>
+          </ul>
+        </li>
 
-  <li><input type="checkbox" class="task main-task">PHASE 11 — Advanced Topics
-    <ul>
-      <li><input type="checkbox" class="task sub-task">Design tokens automation</li>
-      <li><input type="checkbox" class="task sub-task">Headless/UI-agnostic components</li>
-      <li><input type="checkbox" class="task sub-task">Figma ↔ Code token sync</li>
-      <li><input type="checkbox" class="task sub-task">Micro-frontends & shared design system</li>
-      <li><input type="checkbox" class="task sub-task">Metrics & KPIs for success</li>
-    </ul>
-  </li>
+        <li>
+          <input type="checkbox" class="task main-task" />PHASE 11 — Advanced
+          Topics
+          <ul>
+            <li>
+              <input type="checkbox" class="task sub-task" />Design tokens
+              automation
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                class="task sub-task"
+              />Headless/UI-agnostic components
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Figma ↔ Code token
+              sync
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Micro-frontends &
+              shared design system
+            </li>
+            <li>
+              <input type="checkbox" class="task sub-task" />Metrics & KPIs for
+              success
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
-</ul>
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </body>
 </html>
