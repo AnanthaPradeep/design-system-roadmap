@@ -130,7 +130,7 @@ button:active {
 }
 
 @media print {
-  button, .progress-box {
+  button {
     display: none;
   }
 
@@ -139,6 +139,7 @@ button:active {
     color: #000000;
   }
 }
+
 
 
 input[type="checkbox"]:checked {
